@@ -298,7 +298,9 @@ final class SchemesGenerator: SchemesGenerating {
         let onlyGenerateCoverageForSpecifiedTargets = codeCoverageTargets.count > 0 ? true : nil
 
         let shouldUseLaunchSchemeArgsEnv: Bool = args == nil && environments == nil
-
+        let language = testAction.language
+        let region = testAction.region
+        
         return XCScheme.TestAction(buildConfiguration: testAction.configurationName,
                                    macroExpansion: nil,
                                    testables: testables,
@@ -309,7 +311,9 @@ final class SchemesGenerator: SchemesGenerating {
                                    codeCoverageTargets: codeCoverageTargets,
                                    onlyGenerateCoverageForSpecifiedTargets: onlyGenerateCoverageForSpecifiedTargets,
                                    commandlineArguments: args,
-                                   environmentVariables: environments)
+                                   environmentVariables: environments,
+                                   language: language,
+                                   region: region)
     }
 
     /// Generates the scheme launch action.

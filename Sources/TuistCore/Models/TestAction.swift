@@ -11,7 +11,9 @@ public struct TestAction: Equatable {
     public let codeCoverageTargets: [TargetReference]
     public let preActions: [ExecutionAction]
     public let postActions: [ExecutionAction]
-
+    public let language: String?
+    public let region: String?
+    
     // MARK: - Init
 
     public init(targets: [TestableTarget] = [],
@@ -20,7 +22,9 @@ public struct TestAction: Equatable {
                 coverage: Bool = false,
                 codeCoverageTargets: [TargetReference] = [],
                 preActions: [ExecutionAction] = [],
-                postActions: [ExecutionAction] = []) {
+                postActions: [ExecutionAction] = [],
+                language: String? = nil,
+                region: String? = nil) {
         self.targets = targets
         self.arguments = arguments
         self.configurationName = configurationName
@@ -28,5 +32,7 @@ public struct TestAction: Equatable {
         self.preActions = preActions
         self.postActions = postActions
         self.codeCoverageTargets = codeCoverageTargets
+        self.language = language
+        self.region = region
     }
 }

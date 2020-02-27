@@ -21,13 +21,17 @@ extension TuistCore.TestAction {
                                                                                           generatorPaths: generatorPaths) }
         let postActions = try manifest.postActions.map { try TuistCore.ExecutionAction.from(manifest: $0,
                                                                                             generatorPaths: generatorPaths) }
-
+        let language: String? = manifest.language
+        let region: String? = manifest.region
+        
         return TestAction(targets: targets,
                           arguments: arguments,
                           configurationName: configurationName,
                           coverage: coverage,
                           codeCoverageTargets: codeCoverageTargets,
                           preActions: preActions,
-                          postActions: postActions)
+                          postActions: postActions,
+                          language: language,
+                          region: region)
     }
 }

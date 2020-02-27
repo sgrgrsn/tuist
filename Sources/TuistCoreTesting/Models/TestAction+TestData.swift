@@ -9,13 +9,17 @@ public extension TestAction {
                      coverage: Bool = false,
                      codeCoverageTargets: [TargetReference] = [],
                      preActions: [ExecutionAction] = [],
-                     postActions: [ExecutionAction] = []) -> TestAction {
+                     postActions: [ExecutionAction] = [],
+                     language: String? = nil,
+                     region: String? = nil) -> TestAction {
         TestAction(targets: targets,
                    arguments: arguments,
                    configurationName: configurationName,
                    coverage: coverage,
                    codeCoverageTargets: codeCoverageTargets,
                    preActions: preActions,
-                   postActions: postActions)
+                   postActions: postActions,
+                   language: language,
+                   region: region)
     }
 }
