@@ -11,7 +11,9 @@ public class MockContentHashing: ContentHashing {
     }
 
     public var hashStringsStub = ""
-    public func hash(_ strings: Array<String>) throws -> String {
+    public var hashStringsSpy: [String]? = nil
+    public func hash(_ strings: [String]) throws -> String {
+        hashStringsSpy = strings
         return hashStringsStub
     }
 
