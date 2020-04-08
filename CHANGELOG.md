@@ -4,6 +4,10 @@ Please, check out guidelines: https://keepachangelog.com/en/1.0.0/
 
 ## Next
 
+### Added
+
+- Support for returning `SideEffectDescriptor`s from the graph mappers https://github.com/tuist/tuist/pull/1201 by @pepibumur.
+
 ## 1.6.0
 
 ### Fixed
